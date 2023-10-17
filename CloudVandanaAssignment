@@ -1,0 +1,111 @@
+JAVA
+1.Create an array with the values (1, 2, 3, 4, 5, 6, 7) and shuffle it.
+PROGRAM:
+import java.util.Random;
+public class ShuffleArray 
+{
+	    public static void main(String[] args) {
+	        int[] a = {1, 2, 3, 4, 5, 6, 7};
+	        
+	        shuffleArray(a);	        
+	        for (int i : a) {
+	            System.out.print(i + " ");
+	        }
+	    }
+	    public static void shuffleArray(int[] a) {
+	        int n = a.length;
+	        Random rand = new Random();
+
+	        for (int i = n - 1; i > 0; i--) {
+	            int j = rand.nextInt(i + 1);
+	            
+	            int temp = a[i];
+	            a[i] = a[j];
+	            a[j] = temp;
+	        }        
+	    }
+}
+
+2. Enter a Roman Number as input and convert it to an integer. (Example: IX=9).
+PROGRAM:
+public class RomanNumToInteger 
+{
+	    public static void main(String[] args) 
+	    {
+	        String romanNum = "iii";
+	        String s=romanNum.toUpperCase();
+	        int res = romanNumToInteger(s);
+	        System.out.println("Integer equivalent: " + res);
+	    }
+	    public static int romanNumToInteger(String s) {
+	        int result = 0;
+	        int prevValue = 0;
+
+	        for (int i = s.length() - 1; i >= 0; i--) {
+	            char currentChar = s.charAt(i);
+	            int currValue = 0;
+
+	            switch (currentChar) {
+	                case 'I':
+	                    currValue = 1;
+	                    break;
+	                case 'V':
+	                    currValue = 5;
+	                    break;
+	                case 'X':
+	                    currValue = 10;
+	                    break;
+	                case 'L':
+	                    currValue = 50;
+	                    break;
+	                case 'C':
+	                    currValue = 100;
+	                    break;
+	                case 'D':
+	                    currValue = 500;
+	                    break;
+	                case 'M':
+	                    currValue = 1000;
+	                    break;
+	            }
+	            if (currValue < prevValue) {
+	                result -= currValue;
+	            } else {
+	                result += currValue;
+	            }
+	            prevValue = currValue;
+	        }
+	        return result;
+	    }
+}
+
+3. Check if the input is pangram or not. (A pangram is a sentence that contains all the alphabets from A to Z).
+PROGRAM:
+import java.util.Scanner;
+public class PangramProgram 
+{
+	public static void main(String[] args) 
+	{
+		Scanner scn=new Scanner(System.in);
+		System.out.println("Enter String:");
+		String s=scn.nextLine();
+		if(pangram(s)) System.out.println("Pangram");
+		else System.out.println("Not Panagram");
+	}
+	static boolean pangram(String st)
+	{
+		st=st.toUpperCase();
+		for(char ch='A';ch<='Z';ch++)
+		{
+			if(!st.contains(ch+"")) return false;
+		}
+		return true;
+	}
+}
+
+
+
+JAVA SCRIPT
+
+
+
