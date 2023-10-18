@@ -107,5 +107,115 @@ public class PangramProgram
 
 JAVA SCRIPT
 
+1.Take a sentence as an input and reverse every word in that sentence.
+PROGRAM:
+function reverseSentence(sentence) {
+    var word = sentence.split(' ');
+    var reverseSentence = word.map(function(words) {
+        return words.split('').reverse().join('');
+    });
+    var reversingSentence = reverseSentence.join(' ');
 
+    return reversingSentence;
+}
+var inputSentence = "hello i am cristiano ronaldo";
+var reversedSentence = reverseSentence(inputSentence);
+console.log(reversedSentence);
 
+2.Perform sorting of an array in descending order.
+PROGRAM:
+var numbers = [5, 2, 9, 1, 5, 6];
+
+numbers.sort(function(a, b) {
+    return b - a;
+});
+
+console.log(numbers);
+
+HTML
+
+1. Create a basic calculator using HTML, CSS, and JavaScript with the functionality of add, subtract, multiply and divide.
+
+HTML:
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="buttons">
+
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')">+</button>
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button>
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('*')">*</button>
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="appendToDisplay('.')">.</button>
+            <button onclick="calculateResult()">=</button>
+            <button onclick="appendToDisplay('/')">/</button>
+            <button onclick="clearDisplay()">AC</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+CSS:
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #3108d7;
+}
+
+.calculator {
+    background-color: #090909;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+}
+
+#display {
+    width: 100%;
+    height: 40px;
+    font-size: 24px;
+    text-align: right;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+button {
+    width: 100%;
+    height: 50px;
+    font-size: 20px;
+}
+
+JAVASCRIPT:
+function calculateRes() {
+    try {
+        const result = eval(document.getElementById("display").value);
+        document.getElementById("display").value = result;
+    } catch (error) {
+        document.getElementById("display").value = "Error";
+    }
+}
